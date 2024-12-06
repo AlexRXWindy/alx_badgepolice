@@ -20,20 +20,23 @@ Puedes acceder a la placa de un jugador directamente desde otros scripts mediant
 # Instalación
 Descarga el script y colócalo en tu carpeta de recursos.
 Asegúrate de que las dependencias requeridas (qb-core, es_extended) estén instaladas y correctamente configuradas.
-Añade el recurso a tu archivo server.cfg:
-cfg
-Copiar código
-ensure script-placas
+
+## Añade el recurso a tu archivo server.cfg:
+ensure alx_badgepolice
+
 Crea una carpeta data/ dentro del recurso y asegúrate de que tenga permisos de escritura para guardar los datos en plate_numbers.json.
-Comandos
+
+# Comandos
 /generarplaca [PlayerID]
 Genera un número de placa para un jugador objetivo.
 
-Requisitos:
-Ser policía.
-Tener un nivel de trabajo adecuado.
 /modificarplaca [PlayerID] [NuevoNúmeroDePlaca]
 Modifica el número de placa de un jugador objetivo.
+
+# Requisitos:
+Ser policía.
+Tener grado de trabajo 4.
+
 
 Requisitos:
 Ser policía.
@@ -41,39 +44,43 @@ Tener un nivel de trabajo adecuado.
 /miplaca
 Consulta tu número de placa actual.
 
-Exports
+# Exports
 Este script incluye un export para acceder a los números de placa desde otros scripts.
 
-Export Disponible
-lua
-Copiar código
-exports['script-placas']:getPlateNumber(citizenId)
-Uso
+Export Disponible:
+
+exports['alx_badgepolice']:getPlateNumber(citizenId)
+
+# Uso
 Puedes llamar a este export desde cualquier script en tu servidor para obtener la placa de un jugador:
 
-lua
-Copiar código
-local plateNumber = exports['script-placas']:getPlateNumber('CID12345')
+local plateNumber = exports['alx_badgepolice']:getPlateNumber('CID12345')
 if plateNumber then
     print('La placa del jugador es: ' .. plateNumber)
 else
     print('No se encontró un número de placa para este jugador.')
 end
-Requisitos
+
+# Requisitos
 Frameworks Compatibles:
 QBCore
 ESX
+
 Notificaciones:
-Para ESX, puedes usar cualquier sistema de notificaciones que soporte exports, como Mythic Notify.
+Para ESX, puedes usar cualquier sistema de notificaciones que soporte exports.
+
 Configuración
 Si deseas personalizar el script, puedes modificar las siguientes partes:
 
 Generación de Placas: Cambia la lógica de generatePlateNumber() para ajustar el formato del número de placa.
+
 Notificaciones: Cambia la función notify(message, type) para usar otro sistema de notificaciones.
-Contribución
+
+# Contribución
 Si deseas mejorar el script o añadir nuevas funcionalidades, crea un pull request o abre un issue en el repositorio del proyecto.
 
-Soporte
+# Soporte
 Si encuentras problemas al usar este script o necesitas ayuda, puedes contactarnos mediante nuestra página de soporte o unirte a nuestro servidor de Discord.
+https://discord.gg/cXt5xPYZK5
 
 ¡Disfruta de tu experiencia de juego con este sistema de gestión de placas! 🚓
