@@ -54,12 +54,15 @@ exports['alx_badgepolice']:getPlateNumber(citizenId)
 # Uso
 Puedes llamar a este export desde cualquier script en tu servidor para obtener la placa de un jugador:
 
-local plateNumber = exports['alx_badgepolice']:getPlateNumber('CID12345')
+```local plateNumber = exports['alx_badgepolice']:getPlateNumber('CID12345')```
+
+```lua
 if plateNumber then
     print('La placa del jugador es: ' .. plateNumber)
 else
     print('No se encontró un número de placa para este jugador.')
 end
+```
 
 # Requisitos
 Frameworks Compatibles:
